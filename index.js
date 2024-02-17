@@ -74,6 +74,11 @@ async function run() {
       const result = await coffeCollection.deleteOne(query);
       res.send(result);
     })
+    app.post('/user', async(req,res)=>{
+      const user = req.body;
+      const result = await userCollection.insertOne(user);
+      res.send(result);
+    })
   } finally {
     // Ensures that the client will close when you finish/error
     // await client.close();
