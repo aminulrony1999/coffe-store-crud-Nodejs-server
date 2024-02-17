@@ -32,6 +32,7 @@ async function run() {
     console.log("Pinged your deployment. You successfully connected to MongoDB!");
     
     const coffeCollection = client.db("coffeDB").collection("coffe");
+    const userCollection = client.db("userDB").collection("user");
     app.get('/coffe', async(req, res) =>{
       const cursor = coffeCollection.find();
       const result = await cursor.toArray();
